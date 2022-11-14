@@ -8,6 +8,9 @@ inputs:
   use_bundler:
     description: "Run RubyCritic with bundle exec. Default: `false`"
     default: 'false'
+  min_score_treshold:
+    description: "Minimal score threshold to be passed at pipeline. Default: `90`"
+    default: '90'
 runs:
   using: 'composite'
   steps:
@@ -16,6 +19,7 @@ runs:
       env:
         INPUT_WORKDIR: ${{ inputs.workdir }}
         INPUT_USE_BUNDLER: ${{ inputs.use_bundler }}
+        INPUT_MIN_SCORE_THRESHOLD: ${{ inputs.min_score_treshold }}
 branding:
   icon: 'check-circle'
   color: 'red'
