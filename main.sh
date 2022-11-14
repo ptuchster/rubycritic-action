@@ -21,7 +21,7 @@ echo '::endgroup::'
 
 echo '::group:: RubyCritic run'
 
-${BUNDLE_EXEC}rubycritic --mode-ci --format json --minimum-score ${INPUT_MIN_SCORE_THRESHOLD} -b master --maximum-decrease 0
+${BUNDLE_EXEC}rubycritic --mode-ci --format json --minimum-score ${INPUT_MIN_SCORE_THRESHOLD} --branch master --maximum-decrease 0
 
 final_rc=$?
 echo '::endgroup::'
