@@ -9,6 +9,8 @@ fi
 
 echo '::group:: Preflight ...'
 
+sudo gem install bundler rubycritic
+
 ${BUNDLE_EXEC}rubycritic -v || exit 1
 
 retVal=$?
